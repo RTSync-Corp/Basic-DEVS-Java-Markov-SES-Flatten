@@ -1,0 +1,50 @@
+
+    @Override
+    public String[] getStateVariableNames() {
+        ArrayList<String> lst = new ArrayList<String>();
+        for (AtomicModel child : getChildren())
+            if (child instanceof StateVariableBased)
+                for (String childVar : ((StateVariableBased) child)
+                        .getStateVariableNames())
+                    lst.add(child.getName() + "." + childVar);
+        return lst.toArray(new String[0]);
+    }
+
+    @Override
+    public Object[] getStateVariableValues() {
+        ArrayList<Object> lst = new ArrayList<Object>();
+        for (AtomicModel child : getChildren())
+            if (child instanceof StateVariableBased)
+                for (Object childVar : ((StateVariableBased) child)
+                        .getStateVariableValues())
+                    lst.add(childVar);
+        return lst.toArray();
+    }
+
+    @Override
+    public Class<?>[] getStateVariableTypes() {
+        ArrayList<Class<?>> lst = new ArrayList<Class<?>>();
+        for (AtomicModel child : getChildren())
+            if (child instanceof StateVariableBased)
+                for (Class<?> childVar : ((StateVariableBased) child)
+                        .getStateVariableTypes())
+                    lst.add(childVar);
+        return lst.toArray(new Class<?>[0]);
+    }
+
+    @Override
+    public void setStateVariableValue(int index, Object value) {
+        int i = 0;
+        for (AtomicModel child : getChildren())
+            if (child instanceof StateVariableBased)
+                for (int childIndex = 0; childIndex < ((StateVariableBased) child)
+                        .getStateVariableNames().length; childIndex++) {
+                    if (i == index) {
+                        ((StateVariableBased) child).setStateVariableValue(
+                                childIndex, value);
+                        return;
+                    }
+                    i++;
+                }
+    }
+    
