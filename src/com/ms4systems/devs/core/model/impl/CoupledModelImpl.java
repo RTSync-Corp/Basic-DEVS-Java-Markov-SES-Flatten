@@ -13,7 +13,6 @@ import com.ms4systems.devs.core.model.CoupledModel;
 import com.ms4systems.devs.core.simulation.Coordinator;
 import com.ms4systems.devs.core.simulation.Simulator;
 import com.ms4systems.devs.core.simulation.impl.CoordinatorImpl;
-//import com.ms4systems.devs.core.util.DomToXML;
 import com.ms4systems.devs.visitor.ModelVisitor;
 
 public class CoupledModelImpl extends AtomicModelImpl implements CoupledModel {
@@ -129,9 +128,7 @@ public class CoupledModelImpl extends AtomicModelImpl implements CoupledModel {
         getCoordinator().removeCouplings(couplingsToRemove);
     }
 //BPZ: made remove coupling use remove couplings
-//    public void removeCoupling(Port<?> sendingPort, Port<?> receivingPort) {
-//        getCoordinator().getRoutingTable().removeCoupling(sendingPort, receivingPort);
-    //   }
+
     public void removeCoupling(Port<?> sendingPort, Port<?> receivingPort) {
     	getCoordinator().removeCoupling(sendingPort, receivingPort);
     }
@@ -233,29 +230,7 @@ public class CoupledModelImpl extends AtomicModelImpl implements CoupledModel {
         }
         return s;
     }
-//
-//    public String writePorts() {
-//        String s = "";
-//        ArrayList<Coupling> cp = this.getCouplings();
-//        for (Coupling coup : cp) {
-//            String source = coup.getSource().getName();
-//            String srcPrt = coup.getSourcePort().getName();
-//            String destination = coup.getDestination().getName();
-//            String destPrt = coup.getDestinationPort().getName();
-//            if (source.equals(this.getName())) {
-//                s += "\npublic final Port<? extends Serializable> " + srcPrt
-//                        + "= addInputPort(" + DomToXML.quote(srcPrt)
-//                        + ",Serializable.class);";
-//            }
-//
-//            if (destination.equals(this.getName())) {
-//                s += "\npublic final Port<? extends Serializable> " + destPrt
-//                        + "= addOutputPort(" + DomToXML.quote(destPrt)
-//                        + ",Serializable.class);";
-//            }
-//        }
-//        return s;
-//    }
+
     public String writePorts() {
 
 		String s = "";
@@ -270,15 +245,9 @@ public class CoupledModelImpl extends AtomicModelImpl implements CoupledModel {
 			String destPrt = coup.getDestinationPort().getName();
 			if (source.equals(this.getName()) && !(inports.contains(srcPrt))) {
 				inports.add(srcPrt);
-				// s += "\n\t\tpublic final Port<? extends Serializable> " + srcPrt
-				// 		+ "= addInputPort(" + DomToXML.quote(srcPrt)
-				// 		+ ",Serializable.class);";
 			}
 			if (destination.equals(this.getName()) && !(outports.contains(destPrt))) {
 				outports.add(destPrt);
-				// s += "\n\t\tpublic final Port<? extends Serializable> " + destPrt
-				// 		+ "= addOutputPort(" + DomToXML.quote(destPrt)
-				// 		+ ",Serializable.class);";
 			}
 		}
 		return s;

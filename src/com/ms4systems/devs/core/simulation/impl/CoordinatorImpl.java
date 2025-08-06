@@ -107,8 +107,6 @@ public class CoordinatorImpl extends SimulatorImpl implements Coordinator {
 		double minTN = Double.POSITIVE_INFINITY;
 		
 		getSimulatorQueue().clear();
-//		getChildren().clear();
-//		getChildModels().clear();
 		
 		setCurrentTime(initialSimulationTime);
 		

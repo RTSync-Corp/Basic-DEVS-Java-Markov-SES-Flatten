@@ -14,8 +14,6 @@ import com.ms4systems.devs.core.simulation.Simulator;
 import com.ms4systems.devs.exception.InvalidCouplingException;
 
 public class RoutingTableImpl implements RoutingTable {
-	// private static org.apache.log4j.Logger log = org.apache.log4j.Logger
-	// 		.getLogger(RoutingTableImpl.class);
 	
 	private static final long serialVersionUID = 1L;
 	

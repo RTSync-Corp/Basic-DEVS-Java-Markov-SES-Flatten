@@ -77,11 +77,6 @@ public class SimulationImpl implements Simulation {
 
 	}
 
-	/**
-	 * 
-	 */
-//	private static final long serialVersionUID = 1L;
-
 	private long currentIterationCount = 0;
 
 	private double currentSimulationTime = 0;
@@ -278,9 +273,7 @@ public class SimulationImpl implements Simulation {
 
 		// Add all names of components and a hash of couplings
 		ModelVisitor visitor = new ModelVisitor() {
-			/**
-			 * 
-			 */
+
 			private static final long serialVersionUID = 1L;
 
 			@Override
