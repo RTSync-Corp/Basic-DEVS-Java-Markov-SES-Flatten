@@ -1,0 +1,12 @@
+From the IoTDecomp perspective, IoTSmartApp is made of Sensors and Actuators!
+From the SensorMult perspective, Sensors is made of more than one Sensor!
+From the ActuatorMult perspective, Actuators is made of more than one Actuator!
+//Sensor can be SmokeDetector,WaterLeakageDetection,or ThermalSensor in SensorType!
+//Actuator can be Smartphone, WindowController, or AirConditioner in ActuatorType!
+Sensor can be id in index!
+Actuator can be id in index!
+From the sensor perspective, Sensor is made of SensorBody!
+// and SensorCase!
+SensorBody can be SmokeDetector,WaterLeakageDetection,or ThermalSensor in SensorType!
+From the actuator perspective, Actuator is made of ActuatorBody!
+ActuatorBody can be Smartphone, WindowController, or AirConditioner in ActuatorType!
