@@ -1,0 +1,4 @@
+set name of model as BCDE !
+pruned from BCDE.ses !
+mergeAll from BCDE.ses !
+write class files !

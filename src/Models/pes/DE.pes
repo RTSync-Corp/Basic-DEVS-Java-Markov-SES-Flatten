@@ -1,0 +1,4 @@
+set name of model as DE !
+pruned from DE.ses !
+mergeAll from DE.ses !
+write class files !

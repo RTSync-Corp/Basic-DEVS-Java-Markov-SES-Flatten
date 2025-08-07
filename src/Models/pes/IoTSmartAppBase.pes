@@ -1,0 +1,7 @@
+set name of model as IoTSmartApp !
+pruned from IoTSmartApp.ses !
+mergeAll from IoTSmartApp.ses !
+restructure multiaspects using index!
+set multiplicity of index as [3] for Sensor!
+set multiplicity of index as [3] for Actuator!
+write class files !

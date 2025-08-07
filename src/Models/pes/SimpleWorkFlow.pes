@@ -1,0 +1,4 @@
+set name of model as SimpleWorkFlow !
+pruned from SimpleWorkFlow.ses !
+mergeAll from SimpleWorkFlow.ses !
+write class files !

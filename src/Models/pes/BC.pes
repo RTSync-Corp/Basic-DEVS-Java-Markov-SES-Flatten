@@ -1,0 +1,4 @@
+set name of model as BC !
+pruned from BC.ses !
+mergeAll from BC.ses !
+write class files !

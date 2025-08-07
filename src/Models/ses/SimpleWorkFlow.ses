@@ -1,0 +1,5 @@
+From the top perspective, SimpleWorkFlow is made of GeneratorOfJobs, ProcessorOfJobs, and Transducer!
+From the top perspective, GeneratorOfJobs sends Job to ProcessorOfJobs!
+From the top perspective, GeneratorOfJobs sends outJob to Transducer as inAriv!
+From the top perspective, ProcessorOfJobs sends outJob to Transducer as inSolved!
+From the top perspective, Transducer sends Stop to GeneratorOfJobs!
